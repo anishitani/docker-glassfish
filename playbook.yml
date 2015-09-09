@@ -1,5 +1,0 @@
----
-
-- hosts: localhost
-  roles:
-    - role: atoshio25.glassfish
