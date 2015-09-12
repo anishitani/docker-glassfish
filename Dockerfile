@@ -1,8 +1,8 @@
 FROM anishitani/docker-java
 MAINTAINER André Nishitani <andre.nishitani@gmail.com>
 
-ENV GF_MAJOR 4
-ENV GF_MINOR 1
+ENV GF_MAJOR 3
+ENV GF_MINOR 1.2.2
 ENV GF_VERSION $GF_MAJOR.$GF_MINOR
 ENV GF_DIR /opt/glassfish$GF_MAJOR
 
