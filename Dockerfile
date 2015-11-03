@@ -1,4 +1,4 @@
-FROM anishitani/docker-java
+FROM anishitani/docker-java:8
 MAINTAINER André Nishitani <andre.nishitani@gmail.com>
 
 ENV GF_MAJOR 4
