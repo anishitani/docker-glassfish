@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/opt/glassfish$GF_MAJOR/bin/asadmin start-domain 
+/opt/glassfish$GF_MAJOR/bin/asadmin start-domain -w
