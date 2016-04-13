@@ -18,7 +18,9 @@ RUN addgroup --system glassfish \
   && adduser --system --shell /bin/bash --ingroup glassfish glassfish \
   && chown -R glassfish:glassfish $GF_DIR
 
-ADD ./start.sh /scripts/start.sh
+ADD ../start.sh /scripts/start.sh
 RUN chmod +x /scripts/start.sh
+
+EXPOSE 80 443 4848 8080 9009
 
 ENTRYPOINT [ "/scripts/start.sh" ]
