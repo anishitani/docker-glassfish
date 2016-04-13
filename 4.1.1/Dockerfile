@@ -2,8 +2,9 @@ FROM anishitani/docker-java:8
 MAINTAINER André Nishitani <andre.nishitani@gmail.com>
 
 ENV GF_MAJOR 4
-ENV GF_MINOR 1.1
-ENV GF_VERSION $GF_MAJOR.$GF_MINOR
+ENV GF_MINOR 1
+ENV GF_BUILD 1
+ENV GF_VERSION $GF_MAJOR.$GF_MINOR.$GF_BUILD
 ENV GF_DIR /opt/glassfish$GF_MAJOR
 
 RUN /scripts/init_squid_cache.sh
