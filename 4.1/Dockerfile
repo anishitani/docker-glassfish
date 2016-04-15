@@ -11,15 +11,14 @@ RUN apt-get update -y && apt-get install -y unzip wget \
   && unzip -d /opt glassfish-$GF_VERSION.zip \
   && apt-get purge -y unzip \
   && apt-get autoclean && apt-get --purge -y autoremove \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* glassfish-$GF_VERSION.zip
-
-RUN addgroup --system glassfish \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* glassfish-$GF_VERSION.zip \
+  && addgroup --system glassfish \
   && adduser --system --shell /bin/bash --ingroup glassfish glassfish \
   && chown -R glassfish:glassfish $GF_DIR
 
-ADD ./start.sh /scripts/start.sh
-RUN chmod +x /scripts/start.sh
+ADD ./docker-entrypoint.sh /sbin/docker-entrypoint
+RUN chmod +x /sbin/docker-entrypoint
 
 EXPOSE 80 443 4848 8080 9009
 
-ENTRYPOINT [ "/scripts/start.sh" ]
+ENTRYPOINT [ "docker-entrypoint" ]
