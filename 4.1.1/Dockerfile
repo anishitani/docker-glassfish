@@ -12,7 +12,7 @@ RUN apt-get update -y && apt-get install -y unzip wget \
   && unzip -d /opt glassfish-$GF_VERSION.zip \
   && apt-get purge -y unzip \
   && apt-get autoclean && apt-get --purge -y autoremove \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* glassfish-$GF_VERSION.zip
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* glassfish-$GF_VERSION.zip \
   && addgroup --system glassfish \
   && adduser --system --shell /bin/bash --ingroup glassfish glassfish \
   && chown -R glassfish:glassfish $GF_DIR
