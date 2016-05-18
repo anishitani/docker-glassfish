@@ -22,3 +22,10 @@ This versions also represent the tags of the docker container.
 docker build -t gf-image .
 docker run --name gf-container -it -p 4848:4848 -p 8080:8080 gf-image
 ```
+
+### Environment Variables
+- `GF_MAJOR`: Glassfish major version
+- `GF_MINOR`: Glassfish minor version
+- `GF_BUILD`: Glassfish build version
+- `GF_VERSION`: Glassfish version
+- `GF_DIR`: Glassfish install directory
